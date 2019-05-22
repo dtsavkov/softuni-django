@@ -1,0 +1,111 @@
+1. Create Project folder
+	- D:\PERSONAL\VEMV\django_final\smplus_shop
+
+2. Create VENV environment
+	- CMD > D:\PERSONAL\VEMV\django_final>python -m venv D:\PERSONAL\VEMV\django_final
+
+3. Activate VENV
+	- CMD > D:\PERSONAL\VEMV\django_final>cd Scripts
+			D:\PERSONAL\VEMV\django_final\Scripts>activate
+
+4. Upgrade PIP
+	- CMD > (django_final) D:\PERSONAL\VEMV\django_final\Scripts>python -m pip install --upgrade pip
+
+5. Install DJANGO
+	- CMD > (django_final) D:\PERSONAL\VEMV\django_final\Scripts>pip install Django
+
+6. Create Project
+	- CMD > (django_final) D:\PERSONAL\VEMV\django_final>django-admin startproject smplus_shop
+
+7. Create Applications
+	- CMD > (django_final) D:\PERSONAL\VEMV\django_final>cd smplus_shop
+			(django_final) D:\PERSONAL\VEMV\django_final\smplus_shop>python manage.py startapp accounts
+			(django_final) D:\PERSONAL\VEMV\django_final\smplus_shop>python manage.py startapp common
+			(django_final) D:\PERSONAL\VEMV\django_final\smplus_shop>python manage.py startapp units
+
+8. Add Applications to 'settings.py'
+9. Create 'urls.py' for all applications
+
+10. INCLUDE following to project_name/urls.html:
+	> from django.contrib import admin
+	> from django.urls import path, re_path, include
+
+10. Create 'templates' folders for all applications
+
+11. Create ACCOUNTS - URLS & VIEWS & HTML Templates
+
+12. Make & Apply MIGRATION:
+	- CMD > python manage.py makemigrations
+			python manage.py migrate
+
+13. Create SUPER USER:
+	- CMD > python manage.py createsuperuser
+			dtsavkov / turbo235
+
+14. Commit to GitHub		(https://git-scm.com/docs/git-commit)
+	- Install > Git-2.21.0-64-bit.exe
+	- Restart
+	- Create GIT repository & Take link
+	- command line project directory:
+		> git init
+		> git remote add origin https://github.com/dtsavkov/softuni-django.git		# link to repository
+		> git add .
+	- PyCharm
+		- File > Settings > Version control
+			- add directory - D:\PERSONAL\VEMV\django_final\smplus // git
+		- GitHub
+			- add account
+		- Git
+			- add path to C:\Program Files\Git\bin\git.exe
+	- Select project folder from the tree
+	- VCS > Git > Commit directory
+	
+	- Other commands:
+		> git remote show origin
+		> git commit -m Initial Commit
+
+15. Add APPLICATIONS to admin.py (for each application)
+	- from django.contrib import admin
+	- from .models import Units, UnitType
+	- admin.site.register(Units)
+	- admin.site.register(UnitType)
+	
+	- from django.contrib import admin
+	- from .models import ProfileUser
+	- admin.site.register(ProfileUser)
+
+
+31. Create README file:
+
+	# Django-final-project-example
+
+	## Urls:
+
+	#### Authentication (non-authenticated)
+
+	###### /auth/login/
+	###### /auth/register/
+
+	#### Furniture (authenticated)
+
+	###### /furniture/create/
+	###### /furniture/all/ (non-authenticated)
+	###### /furniture/details/{pk}/
+	###### /furniture/mine/
+	###### /furniture/delete/{pk}/
+	###### /furniture/edit/{pk}/   (post method creates new review)
+	###### /furniture/material/ (admin users)
+
+
+32. Create Requirements file:
+
+	Django==2.2
+	django-discover-runner==1.0
+	django-role-permissions==2.2.1
+	Pillow==6.0.0
+	pytz==2019.1
+	six==1.12.0
+	sqlparse==0.3.0
+
+
+99. Check D:\PERSONAL\Programming Projects\Python\Python Django 2019.02\Links.docx
