@@ -1,3 +1,19 @@
+Lecture Timing > "Django Web Development - Django Project - Furniture shop - март 2019 - Инес Иванова"
+YouTube URL > https://www.youtube.com/watch?v=9zVtSrk8CE0
+
+
+Create more than 1 application = 1:22:30 <> 1:32:30
+Link ProfileUser to DJANGO user = 1:32:30 <> 1:37:00
+Edit NAVBAR = 1:37:00 <> 1:47:00
+User Restrictions = 1:47:00 <> 2:06:00
+Unit Create Function = 2:17:00 <> 2:54:00
+Unit Display Function = 2:54:00 <> 3:00:30
+Include Reviews = 3:00:30 <> 3:xx:00
+Unit Edit Function = 3:xx:00 <> 3:xx:00
+
+
+------------------------------------------------------------------------------------
+
 1. Create Project folder
 	- D:\PERSONAL\VEMV\django_final\smplus_shop
 
@@ -37,6 +53,7 @@
 12. Make & Apply MIGRATION:
 	- CMD > python manage.py makemigrations
 			python manage.py migrate
+	! Migrations are needed on MODELS.py changes
 
 13. Create SUPER USER:
 	- CMD > python manage.py createsuperuser
@@ -63,6 +80,11 @@
 	- Other commands:
 		> git remote show origin
 		> git commit -m Initial Commit
+	
+	- UPDATES
+		- Add new files (red to green)
+		- VCS > Git > Commit Folder
+		- VCS > Git > Push
 
 15. Add APPLICATIONS to admin.py (for each application)
 	- from django.contrib import admin
@@ -74,8 +96,61 @@
 	- from .models import ProfileUser
 	- admin.site.register(ProfileUser)
 
+16. Update NAVBAR with required permissions
 
-31. Create README file:
+17. Create 'forms.py' under app = units
+
+18. Create 'unit_create.html' template
+
+19. Update units \ views, urls, templates
+
+20. Make it beautiful = apply CSS
+    - create folder units\static
+    - create css file
+
+21. Include CSS file(s) in index.html AFTER BOOTSTRAP
+    - {% load static %}
+    - <link rel="stylesheet" type="text/css" href="{% static 'reviews.css' %}">
+    ! if CSS is not applied you have to clear 'Cached images and files'
+
+22. Create 'unit_details.html' template
+
+23. Update units \ views, urls, 'units_list.html' template
+    - <a href="{% url 'unit-details' %} unit.id" class="btn btn-primary">See details</a>       # include "unit.id" to specify which unit to present
+
+24. Include REVIEWS as COPY-PASTE from previous project
+    - create folder 'reviews'
+    - paste all necessary files to it
+    - update smplus_shop \ settings (add application), urls (add reviews urls)
+    - update all REVIEWS files to current project (change item's name, etc.)
+    - update units \ views.py > class UnitDetails to be able to handle more than 1 'context_object_name'
+
+25. Create 'unit_delete.html' template
+    ! input type="submit" value="Confirm"       # to work must be in this way 'input' not 'button' & "Confirm"
+
+26. Add task into the code with '# T0D0 something'
+------------------------------------------------------------------------------------
+
+31. units_list.html - make price visible only for STUFF USER
+    - \\ user.is_superuser
+
+32. Check Admin Panel - Add Unit - Type "+" create new type to not bi visible for != Super Users
+
+33. Add link to 'Log in' page on 'common\permission_denied.html' or auto-redirect in 5 seconds
+
+34. UnitType - CRUD
+    - units\views.py [define classes] & units\forms.py [UnitTypeForm]
+
+35. Create Landing Page
+    - Welcome + Log in + Register
+    * create landing page image to be dynamic
+        - when upload new photo - the old one to be replaced with just uploaded image scr attribute
+
+
+
+------------------------------------------------------------------------------------
+
+51. Create README file:
 
 	# Django-final-project-example
 
@@ -97,7 +172,7 @@
 	###### /furniture/material/ (admin users)
 
 
-32. Create Requirements file:
+52. Create Requirements file:
 
 	Django==2.2
 	django-discover-runner==1.0
@@ -109,3 +184,28 @@
 
 
 99. Check D:\PERSONAL\Programming Projects\Python\Python Django 2019.02\Links.docx
+
+
+------------------------------------------------------------------------------------
+
+{% extends 'index.html' %}
+{% block 'body' %}
+{% endblock %}
+
+------------------------------------------------------------------------------------
+
+USERS:
+
+dtsavkov // turbo235
+super-user // alabala123
+stuff-user // alabala123
+simple-user // alabala123
+
+------------------------------------------------------------------------------------
+
+UNITS creation distribution:
+
+dtsavkov // SM 9xx
+super-user // SM 7xx
+stuff-user // SM 8xx
+simple-user // SM 6xx

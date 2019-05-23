@@ -1,0 +1,25 @@
+1. Update NavBar
+2. Add Create forms
+3. Add CSS files
+4. Include REVIEWS
+5. Create & Protect DELETE
+
+
+
+
+<a href="{% url 'unit-edit' unit.id %}" class="btn btn-success">Edit</a>        <!-- do not forget unit.id -->
+
+
+{% extends 'index.html' %}
+
+{% block 'body' %}
+
+{% endblock %}
+
+
+
+Model: ДОЗАТОР НА ТЕЧНИ ПРОДУКТИ
+Make: SM621
+Type: Flow
+Price: 313
+Description: SM621 е многофункционален програмируем дозатор на течни продукти. Като първичен преобразувател се използва импулсен водомер. Уредът разполага с 3 цифвори или ключови входа (броячен, старт на дозирането и стоп на дозирането - нулиране).

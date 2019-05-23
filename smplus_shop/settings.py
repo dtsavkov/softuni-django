@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'common',
     'accounts',
     'units',
+    'reviews',
 ]
 
 MIDDLEWARE = [
