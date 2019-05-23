@@ -129,16 +129,32 @@ Unit Edit Function = 3:xx:00 <> 3:xx:00
     ! input type="submit" value="Confirm"       # to work must be in this way 'input' not 'button' & "Confirm"
 
 26. Add task into the code with '# T0D0 something'
+
+27. Protect CREATE unit HTML
+    - from django.contrib.auth.mixins import LoginRequiredMixin
+    - add 'LoginRequiredMixin' to class >> class UnitCreate(LoginRequiredMixin, generic.CreateView)
+
+28. Add EDIT unit functionality
+
+29. Add CREATE unit-type functionality
+
+30. 'units_list.html' & 'unit_details.html' - make price visible only for STUFF USER
+
+
 ------------------------------------------------------------------------------------
 
-31. units_list.html - make price visible only for STUFF USER
+30. Include UnitType FULL CRUD
+
+31. Make REVIEWS working!
+
+31. [DONE] units_list.html - make price visible only for STUFF USER
     - \\ user.is_superuser
 
-32. Check Admin Panel - Add Unit - Type "+" create new type to not bi visible for != Super Users
+32. Check Admin Panel - Add Unit - Type "+" create new type to not be visible for != Super Users
 
 33. Add link to 'Log in' page on 'common\permission_denied.html' or auto-redirect in 5 seconds
 
-34. UnitType - CRUD
+34. UnitType - CRUD (apply protections for CREATE link)
     - units\views.py [define classes] & units\forms.py [UnitTypeForm]
 
 35. Create Landing Page
@@ -146,7 +162,9 @@ Unit Edit Function = 3:xx:00 <> 3:xx:00
     * create landing page image to be dynamic
         - when upload new photo - the old one to be replaced with just uploaded image scr attribute
 
+36. Modify page title != 'Title' for all pages
 
+37.* Add 'favicon.ico'
 
 ------------------------------------------------------------------------------------
 
@@ -196,10 +214,10 @@ Unit Edit Function = 3:xx:00 <> 3:xx:00
 
 USERS:
 
-dtsavkov // turbo235
-super-user // alabala123
-stuff-user // alabala123
-simple-user // alabala123
+dtsavkov // turbo235 // Admin
+super-user // alabala123 // Active + Stuff + Super
+stuff-user // alabala123 // Active + Stuff
+simple-user // alabala123 // Active
 
 ------------------------------------------------------------------------------------
 

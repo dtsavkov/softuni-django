@@ -1,12 +1,21 @@
+Commit 3:
 1. Update NavBar
 2. Add Create forms
 3. Add CSS files
 4. Include REVIEWS
 5. Create & Protect DELETE
 
+------------------------------------------------------------------------------------
+Commit 4:
+1. Protect CREATE unit HTML
+2. Add EDIT unit
+3. Add CREATE unit-type functionality
+4. Price visible only for OWNER & STUFF USER
+5. Deploy 'landing_page'
 
 
 
+------------------------------------------------------------------------------------
 <a href="{% url 'unit-edit' unit.id %}" class="btn btn-success">Edit</a>        <!-- do not forget unit.id -->
 
 
@@ -23,3 +32,25 @@ Make: SM621
 Type: Flow
 Price: 313
 Description: SM621 е многофункционален програмируем дозатор на течни продукти. Като първичен преобразувател се използва импулсен водомер. Уредът разполага с 3 цифвори или ключови входа (броячен, старт на дозирането и стоп на дозирането - нулиране).
+
+
+------------------------------------------------------------------------------------
+unit_type_create.html
+------------------------------------------------------------------------------------
+{% extends 'index.html' %}
+
+{% block 'body' %}
+
+    {% if request.user.is_superuser %}
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+    {% else %}
+    {% include 'permission_denied.html' %}
+    {% endif %}
+
+{% endblock %}
+
+

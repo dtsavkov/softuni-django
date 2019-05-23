@@ -21,5 +21,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('units/', include('units.urls')),
     # path('reviews/', include('reviews.urls')),
-    # path('common/', include('common.urls')),
+    path('common/', include('common.urls')),
 ]

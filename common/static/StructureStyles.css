@@ -1,0 +1,146 @@
+﻿.BLOCK-Container {
+	margin: 15px 10px 0px 10px;
+	padding: 0px;
+	float: left;
+	display:inline;
+	width: 545px;
+	background-color: #4075AE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.BLOCK-Left {
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 15px 0px 0px;
+	border-color: #283150;
+	padding: 0px;
+	float: left;
+	display:inline;
+	width: 265px;
+	background-color: #4075AE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.BLOCK-Center {
+	margin: 15px 150px 0px 150px;
+	padding: 0px;
+	width: 265px;
+	background-color: #4075AE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	height: 400px;
+}
+.BLOCK-Right {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	display:inline;
+	width: 265px;
+	background-color: #4075AE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.Block-Title {
+	margin: 0px;
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+	border-color: #283150;
+	padding: 5px;
+	float: left;
+	display:inline;
+	width: 255px;
+	background-color: #23919C;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 17px;
+	font-weight: bold;
+}
+.Block-Picture {
+	margin: 5px 5px 0px 5px;
+	padding: 9px 0px 10px 0px;
+	float: left;
+	display:inline;
+	width: 255px;
+	height: 55px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+.Block-PictureBig {
+	margin: 5px 5px 0px 5px;
+	padding: 8px 0px 5px 0px;
+	float: left;
+	display:inline;
+	width: 255px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+.Block-Text {
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+	border-color: #283150;
+	margin: 0px;
+	padding: 10px;
+	float: left;
+	display:inline;
+	width: 245px;
+	vertical-align: middle;
+	text-align: left;
+	font-size: 10px;
+}
+.Block-TextNoBorder {
+	margin: 0px;
+	padding: 10px;
+	float: left;
+	display:inline;
+	width: 245px;
+	vertical-align: middle;
+	text-align: left;
+	font-size: 10px;
+}
+.Block-List {
+	margin: 0px;
+	padding: 10px;
+	float: left;
+	display:inline;
+	width: 245px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 10px;
+}
+.Block-List ul {
+	content: left;
+	padding: 0px;
+	margin: 7px 0px 0px 8px;
+	line-height: 15px;
+	list-style-type: none;
+}
+.Block-List-UL-NoPadMar {
+	margin: 0px;
+	padding: 10px;
+	float: left;
+	display: inline;
+	width: 245px;
+	text-align: left;
+	font-family: Verdana;
+	font-size: 10px;
+}
+.Block-List-UL-NoPadMar ul {
+	content: left;
+	padding: 0px;
+	margin: 0px;
+	line-height: 15px;
+	list-style-type: none;
+}
+.Block-List a {
+	color: #FCFCFC;
+}
+.Block-List a:visited {
+	color: #FCFCFC;
+}
+.Block-List a:active {
+	color: #FCFCFC;
+	border-style: none;
+}
+.Block-List a:hover {
+	color: #FCFCFC;
+	border-style: none;
+}

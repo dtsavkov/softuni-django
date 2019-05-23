@@ -1,0 +1,110 @@
+{% extends 'index.html' %}
+
+{% block 'body' %}
+
+<div id="CONTAINER">
+  <div class="row">
+
+    <div class="col-lg-6 p-5" align="center">
+
+    <div class="absolute">
+        <br>
+        <h1 class="display-4">Welcome to <b>SM PLUS</b>'s shop</h1>
+        <br>
+        <p class="lead" align="center">This is our brand new online shop. It's has bugs and we are totally aware of it but putting a lot
+            of efforts to complete it soon. This will provide you different user experience while looking for the best device.</p>
+            <p class="lead">It's a pleasure to help you move forward for more than 20 years.</p>
+        <hr class="my-4">
+        <div class="inner cover">
+        <h1 class="cover-heading"></h1>
+        <div class="row">
+          <div class="col-lg-6" align="center">
+              <p>To get maximum of our site:<br><br><a href="{% url 'login' %}" class="btn btn-lg btn-secondary">Log in</a></p>
+          </div>
+          <div class="col-lg-6" align="center">
+              <p> Do not have an account? <br><br>
+              <a href="{% url 'register' %}" class="btn btn-lg btn-secondary">Register</a>
+              </p>
+          </div>
+      </div>
+
+  </div>
+    </div>
+
+    </div>
+
+
+    <div class="col-lg-6 px-5 pt-0 pb-5">
+
+		<div id="CENTER-ALL">
+		<div id="CENTER">
+			<div id="CENTER-TOPIC">
+			<h1 class="TopicStyle3"><b>ABOUT US</b></h1>
+			</div>
+
+		<div class="BLOCK-Container">
+			<div class="BLOCK-Left">
+				<div class="Block-Title">History</div>
+				<div class="Block-Picture">
+					<img alt="History Image" height="53" src="http://www.smplus.org/pics/structure/History-01.jpg" width="245" /></div>
+				<div class="Block-TextNoBorder">
+					SM PLUS Electronics Ltd. was established in 2000 year in the city of Plovdiv,
+					Bulgaria with main orientation in the following directions -
+					SMD and PTH modules and montage, design and manufacture of hybrid integrated
+					circuits, design and manufacture of single and double-sided PCBs, design and
+					manufacturing of control and automation components and devices and distribution
+					of electronic components.<br />&nbsp;<br />
+					One of the most important aspects of our company's activity is the continual
+					improvement of our products, not only in the functional side but also their
+					metrological characteristics. Our purpose is to satisfy our customers'
+					requirements and also to answer the high European standards and regulations.<br />
+					<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+					<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+			</div>
+			<div class="BLOCK-Right">
+				<div class="Block-Title">Products &amp; Services</div>
+				<div class="Block-Picture">
+					<img alt="Business Lines Image" height="53" src="http://www.smplus.org/pics/structure/Business-01.jpg" width="245" /></div>
+				<div class="Block-List-UL-NoPadMar">
+					<ul>
+						<li>&raquo &nbsp; SM 9xx - Temperature Controllers</li>
+						<li>&raquo &nbsp; SM 3xx - Counters</li>
+						<li>&raquo &nbsp; SM 4xx - Timers</li>
+						<li>&raquo &nbsp; SM 5xx - Panel Indicators</li>
+						<li>&raquo &nbsp; SM 6xx - Flow Controllers</li>
+						<li>&raquo &nbsp; SM 7xx - Humidity Controllers</li>
+						<li>&raquo &nbsp; SM 8xx - Special Application</li>
+						<li>&raquo &nbsp; SM 11xx - Hour Meters</li>
+						<li>&raquo &nbsp; SM 107x - Wireless Com. Converters</li>
+						<li>&raquo &nbsp; SM 106x - Wired Com. Converters</li>
+						<li>&raquo &nbsp; SM 104x - In/Out Expansion Modules</li>
+						<li>&raquo &nbsp; SM 103x - Output Expansion Modules</li>
+						<li>&raquo &nbsp; SM 7xxx - Power Units</li>
+						<li>&raquo &nbsp; SM 2xx - Rotary Encoders</li>
+						<li>&raquo &nbsp; SM 1xx - Sensors</li>
+						<li>&raquo &nbsp; Whole system development</li>
+						<li>&raquo &nbsp; Old system replacement</li>
+						<li>&raquo &nbsp; Manual and Automatic PCB design</li>
+						<li>&raquo &nbsp; Manufacturing of one or two side PCB</li>
+						<li>&raquo &nbsp; HIC design &amp; production</li>
+						<li>&raquo &nbsp; Surface Mount (SMT) assembly</li>
+						<li>&raquo &nbsp; Through hole components placing</li>
+						<li>&raquo &nbsp; Components Supply</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		</div>		<!-- #CENTER End -->
+        </div>	<!-- #CENTER-ALL End -->
+    </div>
+
+
+  </div>
+</div>
+
+<!--<div class="jumbotron parent">-->
+        <!--<img style="width: 100%" src="https://static1.squarespace.com/static/52882bede4b0ce5ab826a892/t/52b3bc74e4b0d40f9d0312c6/1387510901487/ikea+karlstad+corner+sofa+korndal+med+blue.png" alt="">-->
+<!--</div>-->
+
+{% endblock %}

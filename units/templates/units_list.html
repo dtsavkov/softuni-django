@@ -11,18 +11,22 @@
           <div class="card-body">
             <h3 class="card-title">{{unit.make}}</h3>
             <h5 class="card-title">{{unit.model}}</h5>
-            <h5 class="card-title">Price: {{unit.price}} BGN</h5>         <!--  Make it visible for STUFF USER -->
+
+            {% if request.user.is_superuser or request.user.id == unit.user.id %}
+                <h5 class="card-title">Price: {{unit.price}} BGN</h5>         <!--  Make it visible for STUFF USER -->
+            {% endif %}
+
             <p class="card-text">{{unit.description}}</p>
             <a href="{% url 'unit-details' unit.id %}" class="btn btn-primary">See details</a>     <!-- include "unit.id" to specify which unit to present -->
           </div>
-        </div>
+         </div>
          </div>
         {% endfor %}
 
     </div>
     {% else %}
 
-    <h1>No units. <a href="">Create one?</a></h1>      <!-- Forward to Create Unit template -->
+    <h1>No units. <a href="{% url 'unit-create' %}">Create one?</a></h1>      <!-- Forward to Create Unit template -->
 
     {% endif %}
 

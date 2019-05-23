@@ -10,11 +10,15 @@
             <h3>Model: {{unit.model}}</h3>
             <h3>Make: {{unit.make}}</h3>
             <h3>Type: {{unit.type}}</h3>
-            <h3>Price: {{unit.price}}</h3>
+
+            {% if is_modify_user %}                                         <!-- hide price -->
+                <h3>Price: {{unit.price}}</h3>
+            {% endif %}
+
             <p>Description: {{unit.description}}</p>
 
             {% if is_modify_user %}
-            <a href="/todeitID" class="btn btn-success">Edit</a>        <!-- do not forget unit.id -->
+            <a href="{% url 'unit-edit' unit.id %}" class="btn btn-success">Edit</a>        <!-- do not forget unit.id -->
             <a href="{% url 'unit-delete' unit.id %}" class="btn btn-danger">Delete</a>     <!-- do not forget unit.id -->
             {% endif %}
         </div>

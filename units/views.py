@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin       # verify that the user is logged in
 
-from .models import Units
+from .models import Units, UnitType
 from .forms import UnitTypeForm, CreateUnitForm
 
 from accounts.models import ProfileUser
@@ -27,7 +28,7 @@ class UnitsList(generic.ListView):
     context_object_name = 'units'
 
 
-class UnitsUserList(generic.ListView):
+class UnitsUserList(LoginRequiredMixin, generic.ListView):
     model = Units                           # return units of current user
     template_name = 'units_list.html'
     context_object_name = 'units'
@@ -40,7 +41,7 @@ class UnitsUserList(generic.ListView):
         return []
 
 
-class UnitCreate(generic.CreateView):
+class UnitCreate(LoginRequiredMixin, generic.CreateView):
     form_class = CreateUnitForm
     template_name = 'unit_create.html'
     success_url = '/units/'
@@ -88,4 +89,36 @@ class UnitDelete(generic.DeleteView):
         unit_to_delete = self.get_object()
         unit_to_delete.delete()
         return HttpResponseRedirect('/units/')
+
+
+class UnitEdit(LoginRequiredMixin, generic.UpdateView):
+    model = Units
+    form_class = CreateUnitForm
+    template_name = 'unit_create.html'
+    success_url = '/units/'
+
+    def form_valid(self, form):
+        user = ProfileUser.objects.all().filter(user__pk=self.request.user.id)[0]
+        form.instance.user = user
+        return super().form_valid(form)
+
+    def get(self, request, pk):
+        if not has_access_to_modify(self.request.user, self.get_object()):
+            return render(request, 'permission_denied.html')
+        instance = Units.objects.get(pk=pk)
+        form = CreateUnitForm(request.POST or None, instance=instance)
+        return render(request, 'unit_create.html', {'form': form})
+
+
+class UnitTypeCreate(generic.CreateView):
+    model = UnitType
+    template_name = 'unit_type_create.html'
+    form_class = UnitTypeForm
+    success_url = '/units/'
+
+    def get(self, request):
+        if not request.user.is_superuser:
+            return render(request, 'permission_denied.html')
+        form = UnitTypeForm
+        return render(request, 'unit_type_create.html', {'form': form})
 

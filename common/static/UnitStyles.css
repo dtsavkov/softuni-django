@@ -1,0 +1,182 @@
+﻿#CENTER-UnitImage {
+	margin: 10px 0px 0px 0px;
+	padding: 5px;
+	float: left;
+	display:inline;
+	width: 290px;
+}
+#CENTER-QUICK {
+	margin: 10px 0px 0px 0px;
+	padding: 20px 0px 0px 0px;
+	float: left;
+	display:inline;
+	width: 255px;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#CENTER-QUICK ul {
+	content: left;
+	padding: 0px;
+	margin: 7px 0px 0px 15px;
+	line-height: 20px;
+	list-style-type: none;
+}
+#CENTER-TEXT {
+	margin: 10px 0px 5px 0px;
+	border-style: solid;
+	border-color: #FCFCFC;
+	border-width: 0px 0px 0px 0px;
+	padding: 10px;
+	float: left;
+	display:inline;
+	width: 545px;
+	font-size: 10px;
+	clear: both;
+	line-height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#CENTER-Specification {
+	margin: 0px;
+	padding: 1px 10px 0px 10px;
+	float: left;
+	display:inline;
+	width: 545px;
+	clear: both;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.CENTER-Spec-Topic {
+	border-style: solid;
+	border-width: 0px;
+	border-color: #FCFCFC;
+	margin: 5px 0px 2px 0px;
+	padding: 1px 10px 2px 7px;
+	float: left;
+	display:inline;
+	width: 528px;
+	font-size: 11px;
+	background-color: #175F68;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+.CENTER-Spec-Sub {
+	margin: 0px 0px 1px 0px;
+	padding: 0px;
+	float: left;
+	display:inline;
+	width: 545px;
+	font-size: 11px;
+	background-color: #559ACC;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+.CENTER-Spec-Type {
+	margin: 0px;
+	padding: 2px 5px 3px 10px;
+	float: left;
+	display: inline;
+	width: 115px;
+	font-size: 9px;
+	background-color: #23919C;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+.CENTER-Spec-Value {
+	border-style: solid;
+	border-width: 0px 0px 0px 1px;
+	border-color: #283150;
+	margin: 0px;
+	padding: 2px 8px 3px 8px;
+	float: left;
+	display:inline;
+	font-size: 9px;
+	background-color: #559ACC;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+.CENTER-Spec-Opt {
+	border-style: solid;
+	border-width: 0px 0px 0px 1px;
+	border-color: #283150;
+	margin: 0px;
+	padding: 2px 7px 3px 7px;
+	float: left;
+	display:inline;
+	font-size: 9px;
+	background-color: #4075AE;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+.AddInfoMain {
+	padding: 0px;
+	margin: 0px 0px 10px 0px;
+	width: 185px;
+	float: left;
+	display:inline;
+}
+.AddInfoTopic {
+	padding: 0px 5px 0px 5px;
+	margin: 0px;
+	float: left;
+	display:inline;
+	border-bottom-style: ridge;
+	border-bottom-width: 2px;
+	width: 175px;
+	height: 16px;
+	background-color: #23919C;
+	text-align: center;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+.AddInfoTextNoPic {
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #144F57;
+	padding: 3px 2px 3px 2px;
+	margin: 0px;
+	float: left;
+	display:inline;
+	width: 181px;
+	background-color: #559ACC;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+.AddInfoTextNoPic ul {
+	line-height: 18px;
+	text-align: left;
+	margin: 0px 0px 0px 20px;
+	list-style-type: disc;
+	padding: 0px;
+	list-style-position: outside;
+}
+.AddInfoText {
+	border-style: solid;
+	border-width: 0px 0px 0px 1px;
+	border-color: #144F57;
+	padding: 0px 2px 5px 2px;
+	margin: 0px;
+	width: 140px;
+	background-color: #559ACC;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+.AddInfoText ul {
+	line-height: 20px;
+	text-align: left;
+	margin: 5px 0px 0px 20px;
+	list-style-type: disc;
+	padding: 0px;
+}
+.AddInfoPicture {
+	width: 40px;
+	background-color: #FCFCFC;
+	text-align: center;
+	vertical-align: middle;
+}
