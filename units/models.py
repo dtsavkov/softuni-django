@@ -18,7 +18,7 @@ class Units(models.Model):
     description = models.TextField()
     price = models.PositiveIntegerField(validators=[MinValueValidator(10)])
     image_url = models.URLField()
-    type = models.ForeignKey(UnitType, on_delete=models.CASCADE)                # blank=True
+    type = models.ForeignKey(UnitType, on_delete=models.CASCADE, blank=True)                # blank=True
 
     def __str__(self):
         return f"{self.user} has {self.make}"

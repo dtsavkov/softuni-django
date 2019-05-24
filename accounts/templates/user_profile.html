@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% block 'body' %}
+
+<div class="container">
+<div class="row">
+
+    <div class="col-lg-12 text-center mb-5">
+
+        <h1>Hello, {{user}}!</h1>
+        <h5>What do you want to do:</h5>
+
+    </div>
+</div> <!-- end row -->
+
+<div class="row">
+    <div class="col-lg-1"></div>
+
+        <div class="col-lg-5 text-center">
+            <img class="rounded-circle" src="https://www.dcu.ie/sites/default/files/iss/images/Icons_V2-01.png" alt="Generic placeholder image" width="140" height="140">
+            <h3 class="m-3">Change password</h3>
+            <p><a class="btn btn-secondary" href="{% url 'password_change' %}" role="button">GO &raquo;</a></p>
+        </div> <!-- end col -->
+
+        <div class="col-lg-5 text-center">
+            <img class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhLedyw4Kh3wkzJD0ytWGHTQF01pqJ0N5l8CO9n4MmZoxF71rmQ" alt="Generic placeholder image" width="140" height="140">
+            <h3 class="m-3">Reset password</h3>
+            <p><a class="btn btn-secondary" href="{% url 'password_reset' %}" role="button">GO &raquo;</a></p>
+        </div> <!-- end col -->
+
+    <div class="col-lg-1"></div>
+
+
+</div> <!-- end row -->
+
+<div class="row">
+    <div class="col-lg-12 text-center my-3">
+        <h3><a href="{% url 'logout' %}" style="color: #a0d6ff;">Logout</a></h3>
+    </div>
+</div> <!-- end row -->
+
+</div> <!-- end container -->
+
+{% endblock %}

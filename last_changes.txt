@@ -13,6 +13,13 @@ Commit 4:
 4. Price visible only for OWNER & STUFF USER
 5. Deploy 'landing_page'
 
+------------------------------------------------------------------------------------
+Commit 5:
+1. Create Profile page
+2. Create Full CRUD for UnitType
+3. Improve HTML Templates (step 1)
+
+
 
 
 ------------------------------------------------------------------------------------

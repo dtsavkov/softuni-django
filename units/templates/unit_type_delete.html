@@ -4,7 +4,7 @@
 
     <div class="row p-5">
         <div class="col-lg-12 text-center">
-            <h1>Are you sure you want to delete {{unit.model}}?</h1><br>
+            <h1>Are you sure you want to delete {{unit_type.name}}?</h1><br>
             <div class="row">
                      <div class="col-lg-6">
                          <form method="post">
@@ -13,7 +13,7 @@
                          </form>
                     </div>
                     <div class="col-lg-6">
-                        <a class="btn btn-primary" href="{% url 'unit-details' unit.id %}">No, go back</a>
+                        <a class="btn btn-primary" href="{% url 'unit-types' %}">No, go back</a>
                     </div>
             </div>
         </div>

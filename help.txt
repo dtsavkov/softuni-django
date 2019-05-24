@@ -140,17 +140,12 @@ Unit Edit Function = 3:xx:00 <> 3:xx:00
 
 30. 'units_list.html' & 'unit_details.html' - make price visible only for STUFF USER
 
+31. Include UnitType FULL CRUD
+
 
 ------------------------------------------------------------------------------------
 
-30. Include UnitType FULL CRUD
-
 31. Make REVIEWS working!
-
-31. [DONE] units_list.html - make price visible only for STUFF USER
-    - \\ user.is_superuser
-
-32. Check Admin Panel - Add Unit - Type "+" create new type to not be visible for != Super Users
 
 33. Add link to 'Log in' page on 'common\permission_denied.html' or auto-redirect in 5 seconds
 
@@ -165,6 +160,14 @@ Unit Edit Function = 3:xx:00 <> 3:xx:00
 36. Modify page title != 'Title' for all pages
 
 37.* Add 'favicon.ico'
+
+xx. [DROP] Check Admin Panel - Add Unit - Type "+" create new type to not be visible for != Super Users
+
+------------------------------------------------------------------------------------
+KNOWN ISSUES:
+
+1. NAVBAR > Profile User not pointing to DJANGO User ID but to Extended User ID
+
 
 ------------------------------------------------------------------------------------
 

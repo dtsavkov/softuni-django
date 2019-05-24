@@ -1,5 +1,8 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:2%">-->
+<!--<nav class="navbar navbar-expand-lg navbar-dark" style="margin-bottom:2% background-color: #4374ad;">-->
+<!-- SM Plus colors - dark-blue=#2c3451 ; light-blue=#4374ad ; lighter-blue=#5698cb ; green=#27909b -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:2%">
+<nav class="navbar navbar-expand-lg navbar-dark" style="margin-bottom:2%; background-color: #4374ad;">
   <a class="navbar-brand" href="{% url 'landing' %}">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -16,25 +19,41 @@
       </li>
       {% else %}
 
+     <!-- UNITS drop-down -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Units
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="{% url 'units' %}">All</a>
-          <a class="dropdown-item" href="{% url 'unit-create' %}">Create</a>
-          <a class="dropdown-item" href="{% url 'units-mine' %}">My units</a>
+        <!--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #a0d6ff;">
+          <a class="dropdown-item" href="{% url 'units' %}"><b>All Devices</b></a>
+          <a class="dropdown-item" href="{% url 'units-mine' %}">My Devices</a>
+          <a class="dropdown-item" href="{% url 'unit-create' %}">Create a Device</a>
         </div>
       </li>
-         <li class="nav-item dropdown">
+
+     <!-- UNIT TYPES drop-down -->
+    {% if user.is_superuser %}                                                               <!-- not present for regular users -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Unit Types
+        </a>
+        <!--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #a0d6ff;">
+          <a class="dropdown-item" href="{% url 'unit-types' %}"><b>All Unit Types</b></a>
+          <a class="dropdown-item" href="{% url 'unit-type-create' %}">Add Unit Type</a>
+        </div>
+      </li>
+    {% endif %}
+
+     <!-- USER drop-down -->
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{user}}
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-         {% if user.is_superuser %}                                                               <!-- not present for regular users -->
-            <a class="dropdown-item" href="{% url 'unit-type-add' %}">Add unit type</a>
-         {% endif %}
-          <a class="dropdown-item" href="#">Profile</a>
+        <!--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">-->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #a0d6ff;">
+          <a class="dropdown-item" href="{% url 'user-profile' user.id %}">Profile</a>
           <a class="dropdown-item" href="{% url 'logout' %}?next=/accounts/login/">Logout</a>     <!-- redirect = ?next=/accounts/login/ -->
         </div>
       </li>

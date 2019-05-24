@@ -45,5 +45,5 @@ class CreateUnitForm(forms.ModelForm):
 
     class Meta:
         model = Units
-        fields = ('id', 'make', 'model', 'description', 'price', 'image_url', 'type',)      # ID ?????
+        fields = ('id', 'make', 'model', 'description', 'price', 'image_url', 'type',)
 

@@ -22,6 +22,24 @@ def has_access_to_modify(current_user, current_object):
     return False
 
 
+# ------------------------------------------------------------------------------------
+# Units CRUD
+# ------------------------------------------------------------------------------------
+
+
+class UnitCreate(LoginRequiredMixin, generic.CreateView):
+    form_class = CreateUnitForm
+    template_name = 'unit_create.html'
+    success_url = '/units/'
+
+    def form_valid(self, form):             # provide user on UNIT creation         # form_valid = validate & save form
+        # do find Profile User from current user
+        user = ProfileUser.objects.all().filter(user__pk=self.request.user.id)[0]
+        # ADD to form instance user the Profile User
+        form.instance.user = user
+        return super().form_valid(form)     # super() = return CreateView with updated form (add user)
+
+
 class UnitsList(generic.ListView):
     model = Units                           # return all units
     template_name = 'units_list.html'
@@ -39,19 +57,6 @@ class UnitsUserList(LoginRequiredMixin, generic.ListView):
         if units:
             return units
         return []
-
-
-class UnitCreate(LoginRequiredMixin, generic.CreateView):
-    form_class = CreateUnitForm
-    template_name = 'unit_create.html'
-    success_url = '/units/'
-
-    def form_valid(self, form):             # provide user on UNIT creation         # form_valid = validate & save form
-        # do find Profile User from current user
-        user = ProfileUser.objects.all().filter(user__pk=self.request.user.id)[0]
-        # ADD to form instance user the Profile User
-        form.instance.user = user
-        return super().form_valid(form)     # super() = return CreateView with updated form (add user)
 
 
 class UnitDetails(generic.DetailView):
@@ -74,23 +79,6 @@ class UnitDetails(generic.DetailView):
         return context
 
 
-class UnitDelete(generic.DeleteView):
-    model = Units
-    login_url = 'accounts/login/'
-
-    def get(self, request, pk):
-        if not has_access_to_modify(self.request.user, self.get_object()):
-            return render(request, 'permission_denied.html')
-        return render(request, 'unit_delete.html', {'unit': self.get_object()})
-
-    def post(self, request, pk):
-        if not has_access_to_modify(self.request.user, self.get_object()):
-            return render(request, 'permission_denied.html')
-        unit_to_delete = self.get_object()
-        unit_to_delete.delete()
-        return HttpResponseRedirect('/units/')
-
-
 class UnitEdit(LoginRequiredMixin, generic.UpdateView):
     model = Units
     form_class = CreateUnitForm
@@ -110,10 +98,32 @@ class UnitEdit(LoginRequiredMixin, generic.UpdateView):
         return render(request, 'unit_create.html', {'form': form})
 
 
+class UnitDelete(generic.DeleteView):
+    model = Units
+    login_url = 'accounts/login/'
+
+    def get(self, request, pk):
+        if not has_access_to_modify(self.request.user, self.get_object()):
+            return render(request, 'permission_denied.html')
+        return render(request, 'unit_delete.html', {'unit': self.get_object()})
+
+    def post(self, request, pk):
+        if not has_access_to_modify(self.request.user, self.get_object()):
+            return render(request, 'permission_denied.html')
+        unit_to_delete = self.get_object()
+        unit_to_delete.delete()
+        return HttpResponseRedirect('/units/')
+
+
+# ------------------------------------------------------------------------------------
+# Unit Type CRUD
+# ------------------------------------------------------------------------------------
+
+# OK
 class UnitTypeCreate(generic.CreateView):
     model = UnitType
-    template_name = 'unit_type_create.html'
     form_class = UnitTypeForm
+    template_name = 'unit_type_create.html'
     success_url = '/units/'
 
     def get(self, request):
@@ -121,4 +131,50 @@ class UnitTypeCreate(generic.CreateView):
             return render(request, 'permission_denied.html')
         form = UnitTypeForm
         return render(request, 'unit_type_create.html', {'form': form})
+
+
+# OK
+class UnitTypeList(generic.ListView):
+    model = UnitType                           # return all unit types
+    template_name = 'unit_type_list.html'
+    context_object_name = 'unit_types'
+
+
+# OK
+class UnitTypeEdit(LoginRequiredMixin, generic.UpdateView):
+    model = UnitType
+    form_class = UnitTypeForm
+    template_name = 'unit_type_create.html'
+    success_url = '/units/'
+
+    def form_valid(self, form):
+        user = ProfileUser.objects.all().filter(user__pk=self.request.user.id)[0]
+        form.instance.user = user
+        return super().form_valid(form)
+
+    def get(self, request, pk):
+        if not request.user.is_superuser:
+            return render(request, 'permission_denied.html')
+        instance = UnitType.objects.get(pk=pk)
+        form = UnitTypeForm(request.POST or None, instance=instance)
+        return render(request, 'unit_type_create.html', {'form': form})
+
+
+# OK
+class UnitTypeDelete(generic.DeleteView):
+    model = UnitType
+    login_url = 'accounts/login/'
+
+    def get(self, request, pk):
+        if not request.user.is_superuser:
+            return render(request, 'permission_denied.html')
+        return render(request, 'unit_type_delete.html', {'unit_type': self.get_object()})
+
+    def delete(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            return render(request, 'permission_denied.html')
+        unit_type_id = kwargs["pk"]
+        unit_type_to_delete = UnitType.objects.get(pk=unit_type_id)
+        unit_type_to_delete.delete()
+        return HttpResponseRedirect('/units/')
 
