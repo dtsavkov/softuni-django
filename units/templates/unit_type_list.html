@@ -7,9 +7,9 @@
     <div class="row justify-content-center">
         {% for unit_type in unit_types %}
          <div class="col-lg-3 mb-5">
-            <div class="card text-center" style="width: 18rem; margin:0 auto;">
+            <div class="card text-center rounded" style="width: 18rem; margin:0 auto; border-color: #4374ad;">
                 <div class="card-body">
-                    <h3 class="card-title">{{unit_type.id}}. {{unit_type.name}}</h3>
+                    <h3 class="card-title">{{unit_type.name}}</h3>
                     <a href="{% url 'unit-type-edit' unit_type.id %}" class="btn btn-success">Edit</a>        <!-- do not forget unit.id -->
                     <a href="{% url 'unit-type-delete' unit_type.id %}" class="btn btn-danger">Delete</a>     <!-- do not forget unit.id -->
                 </div>

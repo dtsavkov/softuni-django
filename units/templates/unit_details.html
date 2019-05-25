@@ -2,28 +2,38 @@
 
 {% block 'body' %}
 
-    <div class="row">
-            <div class="col-lg-6">
-            <img src="{{unit.image_url}}" style="width: 100%" alt="">       <!-- modify image size -->
+    <div class="row" style="color:white;">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3" align="center">
+            <img src="{{unit.image_url}}" style="width: 80%;" align="middle" alt="{{unit.model}}">       <!-- modify image size -->
         </div>
+        <div class="col-lg-1"></div>
         <div class="col-lg-6">
-            <h3>Model: {{unit.model}}</h3>
-            <h3>Make: {{unit.make}}</h3>
-            <h3>Type: {{unit.type}}</h3>
+            <h4>Model: {{unit.model}}</h4>
+            <h4>Name: {{unit.unit_name}}</h4>
+            <h4>Type: {{unit.type}}</h4>
 
             {% if is_modify_user %}                                         <!-- hide price -->
-                <h3>Price: {{unit.price}}</h3>
+                <h4>Price: {{unit.price}}</h4>
             {% endif %}
+            <br>
+            <p>{{unit.short_description}}</p>
 
-            <p>Description: {{unit.description}}</p>
+            <p>{{unit.long_description}}</p>
+
+            <p>Manual:</p>
+            <p> <a href="{{unit.pdf_url}}" target="_blank"><img src="http://www.smplus.org/pics/other/pdf.gif"></a></p>
+            <br>
 
             {% if is_modify_user %}
             <a href="{% url 'unit-edit' unit.id %}" class="btn btn-success">Edit</a>        <!-- do not forget unit.id -->
             <a href="{% url 'unit-delete' unit.id %}" class="btn btn-danger">Delete</a>     <!-- do not forget unit.id -->
             {% endif %}
         </div>
+        <div class="col-lg-1"></div>
     </div>
-        <div class="row">
+
+    <div class="row">
         <div class="col-lg-12">
             <!--//here include reviews with vars for (reviews and form)-->
             <!--// rewrite get 'context_object_data' function-->
@@ -36,3 +46,4 @@
     </div>
 
 {% endblock %}
+

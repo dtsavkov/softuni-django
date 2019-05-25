@@ -19,6 +19,15 @@ Commit 5:
 2. Create Full CRUD for UnitType
 3. Improve HTML Templates (step 1)
 
+------------------------------------------------------------------------------------
+Commit 6:
+1. Update UNIT Model form - model / name / short description / long description / type / price / user manual / announced date
+2. Update UNIT Model views & templates
+3. Improve HTML Templates (step 2) - All
+4. Add README file
+5. Create Additional HTML Templates
+6. Full Test + Initial Data
+
 
 
 
@@ -31,14 +40,6 @@ Commit 5:
 {% block 'body' %}
 
 {% endblock %}
-
-
-
-Model: ДОЗАТОР НА ТЕЧНИ ПРОДУКТИ
-Make: SM621
-Type: Flow
-Price: 313
-Description: SM621 е многофункционален програмируем дозатор на течни продукти. Като първичен преобразувател се използва импулсен водомер. Уредът разполага с 3 цифвори или ключови входа (броячен, старт на дозирането и стоп на дозирането - нулиране).
 
 
 ------------------------------------------------------------------------------------

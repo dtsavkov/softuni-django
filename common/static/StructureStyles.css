@@ -115,19 +115,19 @@
 }
 .Block-List-UL-NoPadMar {
 	margin: 0px;
-	padding: 10px;
+	padding: 3px;
 	float: left;
 	display: inline;
 	width: 245px;
 	text-align: left;
 	font-family: Verdana;
-	font-size: 10px;
+	font-size: 11.5px;
 }
 .Block-List-UL-NoPadMar ul {
 	content: left;
 	padding: 0px;
 	margin: 0px;
-	line-height: 15px;
+	line-height: 22px;
 	list-style-type: none;
 }
 .Block-List a {

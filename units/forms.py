@@ -16,24 +16,29 @@ class UnitTypeForm(forms.ModelForm):
 
 
 class CreateUnitForm(forms.ModelForm):
-    make = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'class': 'form-control'}))
-
     model = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'class': 'form-control'}))
 
-    description = forms.CharField(required=True, widget=forms.Textarea(
+    unit_name = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'class': 'form-control'}))
+
+    short_description = forms.CharField(required=True, widget=forms.Textarea(
+        attrs={'class': 'form-control'}))
+
+    long_description = forms.CharField(required=True, widget=forms.Textarea(
         attrs={'class': 'form-control'}))
 
     price = forms.IntegerField(required=True,
                                validators=[MinValueValidator(10)],
                                widget=forms.TextInput(
                                    attrs={'class': 'form-control',
-                                          'type': 'number'
-                                          }
+                                          'type': 'number'}
                                ))
 
     image_url = forms.URLField(required=True, widget=forms.TextInput(
+        attrs={'class': 'form-control'}))
+
+    pdf_url = forms.URLField(required=True, widget=forms.TextInput(
         attrs={'class': 'form-control'}))
 
     type = forms.ModelChoiceField(queryset=UnitType.objects.all(),
@@ -45,5 +50,5 @@ class CreateUnitForm(forms.ModelForm):
 
     class Meta:
         model = Units
-        fields = ('id', 'make', 'model', 'description', 'price', 'image_url', 'type',)
+        fields = ('id', 'model', 'unit_name', 'short_description', 'long_description', 'price', 'image_url', 'pdf_url', 'type',)
 

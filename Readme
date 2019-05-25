@@ -1,0 +1,52 @@
+# Django Final Project - Daniel Tsavkov
+
+# Urls:
+
+------------------------------------------------------------------------------------
+Public Pages (non-authenticated)
+------------------------------------------------------------------------------------
+> /common/                  # Welcome Landing Page
+> /units/                   # List of all Devices
+> "Permission Denied"       # POST request blocking page
+
+
+------------------------------------------------------------------------------------
+Authentication (non-authenticated)
+------------------------------------------------------------------------------------
+> /accounts/login/          # User Login form
+> /accounts/register/       # User Registration form
+
+-------------------------------------
+Authentication (authenticated)
+-------------------------------------
+> /accounts/profile/{pk}/   # User Profile page - Change / Reset password / Logout
+
+
+------------------------------------------------------------------------------------
+UNITS (non-authenticated)
+------------------------------------------------------------------------------------
+> /units/                   # List of all Devices
+
+
+------------------------------------------------------------------------------------
+UNITS CRUD (authenticated)
+------------------------------------------------------------------------------------
+> /units/mine/              # Devices created by Current User
+
+> /units/create/unit/       # Create New Device
+
+> /units/details/{pk}/      # Device detailed view
+> /units/edit/{pk}/         # Edit Device view (re-use of Create view)
+> /units/delete/{pk}/       # Device deletion confirmation page
+
+
+------------------------------------------------------------------------------------
+UNIT TYPES CRUD (authenticated) (admin @ super users only)
+------------------------------------------------------------------------------------
+> /units/unit_types/        # List of all Unit Types
+
+> /units/create/unit_type/      # Create New Unit Type
+> /units/edit/unit_type/1/      # Edit Unit Type view (re-use of Create view)
+> /units/delete/unit_type/1/    # Unit Type deletion confirmation page
+
+------------------------------------------------------------------------------------

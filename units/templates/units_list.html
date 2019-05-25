@@ -3,30 +3,35 @@
 {% block 'body' %}
 
     {% if units %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="color:white;">
         {% for unit in units %}
-         <div class="col-lg-4 mb-5">
-              <div class="card" style="width: 24rem; margin:0 auto;">
-          <img src="{{unit.image_url}}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h3 class="card-title">{{unit.make}}</h3>
-            <h5 class="card-title">{{unit.model}}</h5>
+            <div class="col-lg-4 mb-5 d-flex align-items-stretch">
+                <div class="card rounded" style="width: 20rem; margin:0 auto; border-color: #4374ad;">
+                    <div class="card-header text-center" style="background-color: #2c3451;">
+                        <!--<img src="{{unit.image_url}}" alt="{{unit.model}}" class="card-img-top" style="max-width: 300px; max-height: 300px">-->
+                        <img src="{{unit.image_url}}" alt="{{unit.model}}" class="card-img-top" style="width: auto; height: auto; max-height: 300px;">
+                    </div>
 
-            {% if request.user.is_superuser or request.user.id == unit.user.id %}
-                <h5 class="card-title">Price: {{unit.price}} BGN</h5>         <!--  Make it visible for STUFF USER -->
-            {% endif %}
+                    <div class="card-body" style="background-color: #4374ad;">
+                        <h3 class="card-title">{{unit.model}}</h3>
+                        <h5 class="card-title">{{unit.unit_name}}</h5>
 
-            <p class="card-text">{{unit.description}}</p>
-            <a href="{% url 'unit-details' unit.id %}" class="btn btn-primary">See details</a>     <!-- include "unit.id" to specify which unit to present -->
-          </div>
-         </div>
-         </div>
+                        {% if request.user.is_superuser or request.user.id == unit.user.id %}   <!--  Make it visible for STUFF USER -->
+                           <h5 class="card-title">Price: {{unit.price}} BGN</h5>
+                        {% endif %}
+
+                        <p class="card-text">{{unit.short_description}}</p>
+                        <a href="{% url 'unit-details' unit.id %}" class="btn btn-primary">See details</a>     <!-- include "unit.id" to specify which unit to present -->
+                    </div>
+
+                </div>
+            </div>
         {% endfor %}
-
     </div>
+
     {% else %}
 
-    <h1>No units. <a href="{% url 'unit-create' %}">Create one?</a></h1>      <!-- Forward to Create Unit template -->
+    <h1 style="color:white;">No units. <a href="{% url 'unit-create' %}" style="color:yellow;">Create one?</a></h1>      <!-- Forward to Create Unit template -->
 
     {% endif %}
 

@@ -140,26 +140,27 @@ Unit Edit Function = 3:xx:00 <> 3:xx:00
 
 30. 'units_list.html' & 'unit_details.html' - make price visible only for STUFF USER
 
-31. Include UnitType FULL CRUD
+31. Create Landing Page
+    - Welcome + Log in + Register
 
-
-------------------------------------------------------------------------------------
-
-31. Make REVIEWS working!
+32. Include UnitType FULL CRUD
+    - units\views.py [define classes] & units\forms.py [UnitTypeForm]
 
 33. Add link to 'Log in' page on 'common\permission_denied.html' or auto-redirect in 5 seconds
 
-34. UnitType - CRUD (apply protections for CREATE link)
-    - units\views.py [define classes] & units\forms.py [UnitTypeForm]
+34. Modify page title != 'Title' for all pages
 
-35. Create Landing Page
-    - Welcome + Log in + Register
+------------------------------------------------------------------------------------
+
+40. Unit Details (form) model / name / short description / long description / type / price / user manual / announced date
+
+41. Make REVIEWS working!
+
+43.* Add 'favicon.ico'
+
+xx. [DROP] Improve Landing Page
     * create landing page image to be dynamic
         - when upload new photo - the old one to be replaced with just uploaded image scr attribute
-
-36. Modify page title != 'Title' for all pages
-
-37.* Add 'favicon.ico'
 
 xx. [DROP] Check Admin Panel - Add Unit - Type "+" create new type to not be visible for != Super Users
 

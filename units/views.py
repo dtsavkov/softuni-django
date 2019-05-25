@@ -124,7 +124,7 @@ class UnitTypeCreate(generic.CreateView):
     model = UnitType
     form_class = UnitTypeForm
     template_name = 'unit_type_create.html'
-    success_url = '/units/'
+    success_url = '/units/unit_types/'
 
     def get(self, request):
         if not request.user.is_superuser:
